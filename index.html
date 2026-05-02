@@ -1,67 +1,173 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CareerGuide - Explore Your Future Career</title>
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Career Guide</title>
+<style>
+body {
+  font-family: Arial;
+  margin: 0;
+  background: #f4f6f9;
+}
+header {
+  background: #2c3e50;
+  color: white;
+  padding: 15px;
+  text-align: center;
+}
+nav {
+  display: flex;
+  justify-content: center;
+  background: #34495e;
+}
+nav a {
+  color: white;
+  padding: 10px 20px;
+  text-decoration: none;
+}
+nav a:hover {
+  background: #2c3e50;
+}
+.section {
+  padding: 30px;
+}
+.card {
+  background: white;
+  padding: 20px;
+  margin: 10px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+input, select, button {
+  padding: 10px;
+  margin: 10px 0;
+  width: 100%;
+}
+button {
+  background: #3498db;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+button:hover {
+  background: #2980b9;
+}
+.result {
+  margin-top: 15px;
+  font-weight: bold;
+  color: green;
+}
+footer {
+  text-align: center;
+  padding: 15px;
+  background: #2c3e50;
+  color: white;
+}
+</style>
 </head>
+
 <body>
-    <!-- Navigation Bar -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <div class="nav-logo">
-                <h2>CareerGuide</h2>
-            </div>
-            <ul class="nav-menu">
-                <li><a href="index.html" class="nav-link active">Home</a></li>
-                <li><a href="careers.html" class="nav-link">Careers</a></li>
-                <li><a href="skills.html" class="nav-link">Skills</a></li>
-                <li><a href="compare.html" class="nav-link">Compare</a></li>
-                <li><a href="contact.html" class="nav-link">Contact</a></li>
-            </ul>
-        </div>
-    </nav>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-content">
-            <h1>Explore Your Future Career</h1>
-            <p>Discover the perfect career path with comprehensive information about different professions, required skills, and future opportunities.</p>
-            <a href="careers.html" class="cta-button">Explore Careers</a>
-        </div>
-    </section>
+<header>
+  <h1>Career Guidance Portal</h1>
+  <p>Find the best career for your future</p>
+</header>
 
-    <!-- Main Content -->
-    <main>
-        <section class="features">
-            <div class="container">
-                <h2>Why Choose CareerGuide?</h2>
-                <div class="features-grid">
-                    <div class="feature-card">
-                        <h3>Comprehensive Information</h3>
-                        <p>Detailed information about various career paths and requirements.</p>
-                    </div>
-                    <div class="feature-card">
-                        <h3>Skills Development</h3>
-                        <p>Essential skills and training requirements for career success.</p>
-                    </div>
-                    <div class="feature-card">
-                        <h3>Career Comparison</h3>
-                        <p>Compare different careers to make informed decisions.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
+<nav>
+  <a href="#home">Home</a>
+  <a href="#career">Career Test</a>
+  <a href="#courses">Courses</a>
+  <a href="#contact">Contact</a>
+</nav>
 
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <p>&copy; 2024 CareerGuide. All rights reserved.</p>
-        </div>
-    </footer>
+<!-- HOME -->
+<div class="section" id="home">
+  <div class="card">
+    <h2>Welcome</h2>
+    <p>This website helps students choose the right career based on their interests and skills.</p>
+  </div>
+</div>
 
-    <script src="script.js"></script>
+<!-- CAREER TEST -->
+<div class="section" id="career">
+  <div class="card">
+    <h2>Career Suggestion</h2>
+
+    <label>Select Your Interest:</label>
+    <select id="interest">
+      <option value="">--Choose--</option>
+      <option value="tech">Technology</option>
+      <option value="medical">Medical</option>
+      <option value="business">Business</option>
+      <option value="arts">Arts</option>
+    </select>
+
+    <button onclick="suggestCareer()">Get Suggestion</button>
+
+    <div class="result" id="result"></div>
+  </div>
+</div>
+
+<!-- COURSES -->
+<div class="section" id="courses">
+  <div class="card">
+    <h2>Popular Courses</h2>
+    <ul>
+      <li>Engineering (CSE, ECE, ME)</li>
+      <li>MBBS / Nursing</li>
+      <li>BBA / MBA</li>
+      <li>BA / Design / Fine Arts</li>
+    </ul>
+  </div>
+</div>
+
+<!-- CONTACT -->
+<div class="section" id="contact">
+  <div class="card">
+    <h2>Contact Us</h2>
+
+    <input type="text" id="name" placeholder="Your Name">
+    <input type="email" id="email" placeholder="Your Email">
+    <button onclick="submitForm()">Submit</button>
+
+    <div class="result" id="formResult"></div>
+  </div>
+</div>
+
+<footer>
+  <p>© 2026 Career Guide</p>
+</footer>
+
+<script>
+function suggestCareer() {
+  let interest = document.getElementById("interest").value;
+  let result = document.getElementById("result");
+
+  if (interest === "tech") {
+    result.innerHTML = "Suggested Career: Software Engineer, Data Scientist";
+  } else if (interest === "medical") {
+    result.innerHTML = "Suggested Career: Doctor, Pharmacist";
+  } else if (interest === "business") {
+    result.innerHTML = "Suggested Career: Entrepreneur, Manager";
+  } else if (interest === "arts") {
+    result.innerHTML = "Suggested Career: Designer, Writer";
+  } else {
+    result.innerHTML = "Please select an option!";
+  }
+}
+
+function submitForm() {
+  let name = document.getElementById("name").value;
+  let email = document.getElementById("email").value;
+
+  if (name && email) {
+    document.getElementById("formResult").innerHTML = "Form submitted successfully!";
+  } else {
+    document.getElementById("formResult").innerHTML = "Please fill all fields!";
+  }
+}
+</script>
+
 </body>
 </html>
