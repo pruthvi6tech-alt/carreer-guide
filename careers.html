@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Careers - CareerGuide</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2>CareerGuide</h2>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="careers.html" class="nav-link active">Careers</a></li>
+                <li><a href="skills.html" class="nav-link">Skills</a></li>
+                <li><a href="compare.html" class="nav-link">Compare</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+        <section class="page-header">
+            <div class="container">
+                <h1>Career Options</h1>
+                <p>Explore different career paths and find your perfect match</p>
+            </div>
+        </section>
+
+        <!-- Search Bar -->
+        <section class="search-section">
+            <div class="container">
+                <div class="search-container">
+                    <input type="text" id="careerSearch" placeholder="Search careers...">
+                    <button onclick="filterCareers()">Search</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Career Cards -->
+        <section class="careers-grid">
+            <div class="container">
+                <a href="engineering.html" class="career-card" data-career="Engineering">
+                    <h3>Engineering</h3>
+                    <p>Design and build innovative solutions to real-world problems</p>
+                </a>
+                <a href="medical.html" class="career-card" data-career="Medical">
+                    <h3>Medical</h3>
+                    <p>Healthcare professionals dedicated to saving lives and improving health</p>
+                </a>
+                <a href="business.html" class="career-card" data-career="Business">
+                    <h3>Business</h3>
+                    <p>Manage operations and drive organizational success</p>
+                </a>
+                <a href="arts.html" class="career-card" data-career="Arts & Design">
+                    <h3>Arts & Design</h3>
+                    <p>Create beautiful and functional designs for various purposes</p>
+                </a>
+                <a href="govt.html" class="career-card" data-career="Government Jobs">
+                    <h3>Government Jobs</h3>
+                    <p>Public service roles serving communities and citizens</p>
+                </a>
+                <a href="it.html" class="career-card" data-career="IT & Software">
+                    <h3>IT & Software</h3>
+                    <p>Develop technology solutions and manage digital infrastructure</p>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 CareerGuide. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

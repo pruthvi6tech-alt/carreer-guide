@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Career Guide</title>
+<style>
+body {
+  font-family: Arial;
+  margin: 0;
+  background: #f4f6f9;
+}
+header {
+  background: #2c3e50;
+  color: white;
+  padding: 15px;
+  text-align: center;
+}
+nav {
+  display: flex;
+  justify-content: center;
+  background: #34495e;
+}
+nav a {
+  color: white;
+  padding: 10px 20px;
+  text-decoration: none;
+}
+nav a:hover {
+  background: #2c3e50;
+}
+.section {
+  padding: 30px;
+}
+.card {
+  background: white;
+  padding: 20px;
+  margin: 10px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+input, select, button {
+  padding: 10px;
+  margin: 10px 0;
+  width: 100%;
+}
+button {
+  background: #3498db;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+button:hover {
+  background: #2980b9;
+}
+.result {
+  margin-top: 15px;
+  font-weight: bold;
+  color: green;
+}
+footer {
+  text-align: center;
+  padding: 15px;
+  background: #2c3e50;
+  color: white;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>Career Guidance Portal</h1>
+  <p>Find the best career for your future</p>
+</header>
+
+<nav>
+  <a href="#home">Home</a>
+  <a href="#career">Career Test</a>
+  <a href="#courses">Courses</a>
+  <a href="#contact">Contact</a>
+</nav>
+
+<!-- HOME -->
+<div class="section" id="home">
+  <div class="card">
+    <h2>Welcome</h2>
+    <p>This website helps students choose the right career based on their interests and skills.</p>
+  </div>
+</div>
+
+<!-- CAREER TEST -->
+<div class="section" id="career">
+  <div class="card">
+    <h2>Career Suggestion</h2>
+
+    <label>Select Your Interest:</label>
+    <select id="interest">
+      <option value="">--Choose--</option>
+      <option value="tech">Technology</option>
+      <option value="medical">Medical</option>
+      <option value="business">Business</option>
+      <option value="arts">Arts</option>
+    </select>
+
+    <button onclick="suggestCareer()">Get Suggestion</button>
+
+    <div class="result" id="result"></div>
+  </div>
+</div>
+
+<!-- COURSES -->
+<div class="section" id="courses">
+  <div class="card">
+    <h2>Popular Courses</h2>
+    <ul>
+      <li>Engineering (CSE, ECE, ME)</li>
+      <li>MBBS / Nursing</li>
+      <li>BBA / MBA</li>
+      <li>BA / Design / Fine Arts</li>
+    </ul>
+  </div>
+</div>
+
+<!-- CONTACT -->
+<div class="section" id="contact">
+  <div class="card">
+    <h2>Contact Us</h2>
+
+    <input type="text" id="name" placeholder="Your Name">
+    <input type="email" id="email" placeholder="Your Email">
+    <button onclick="submitForm()">Submit</button>
+
+    <div class="result" id="formResult"></div>
+  </div>
+</div>
+
+<footer>
+  <p>© 2026 Career Guide</p>
+</footer>
+
+<script>
+function suggestCareer() {
+  let interest = document.getElementById("interest").value;
+  let result = document.getElementById("result");
+
+  if (interest === "tech") {
+    result.innerHTML = "Suggested Career: Software Engineer, Data Scientist";
+  } else if (interest === "medical") {
+    result.innerHTML = "Suggested Career: Doctor, Pharmacist";
+  } else if (interest === "business") {
+    result.innerHTML = "Suggested Career: Entrepreneur, Manager";
+  } else if (interest === "arts") {
+    result.innerHTML = "Suggested Career: Designer, Writer";
+  } else {
+    result.innerHTML = "Please select an option!";
+  }
+}
+
+function submitForm() {
+  let name = document.getElementById("name").value;
+  let email = document.getElementById("email").value;
+
+  if (name && email) {
+    document.getElementById("formResult").innerHTML = "Form submitted successfully!";
+  } else {
+    document.getElementById("formResult").innerHTML = "Please fill all fields!";
+  }
+}
+</script>
+
+</body>
+</html>
